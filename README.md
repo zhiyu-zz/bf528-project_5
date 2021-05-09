@@ -10,7 +10,7 @@ The objective of the original study is to evaluate the similarities and differen
 Wang, Charles, Binsheng Gong, Pierre R. Bushel, Jean Thierry-Mieg, Danielle Thierry-Mieg, Joshua Xu, Hong Fang, et al. 2014. “A comprehensive study design reveals treatment- and transcript abundance–dependent concordance between RNA-seq and microarray data” Nature Biotechnology 32 (9): 926–32. PMID: 4243706
 
 # Repository Contents
-## Data Curator
+
 ### project_5_environment.txt
 Miniconda environment for the data curator part of this project. 
 
