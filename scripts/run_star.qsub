@@ -1,0 +1,17 @@
+#!/bin/bash -l
+#$ -P bf528
+#$ -cwd
+#$ -pe omp 16
+#$ -o /projectnb2/bf528/users/dreadlocks/project_5/sarah/run_star_o
+#$ -e /projectnb2/bf528/users/dreadlocks/project_5/sarah/run_star_e 
+source /etc/bashrc
+
+module load anaconda3
+conda activate pj5_env
+
+GENOMEDIR=/project/bf528/project_3/reference/rn4_STAR
+SAMPLEPATH=/projectnb2/bf528/users/dreadlocks/project_3/curator/sample
+SAVEPATH=/projectnb2/bf528/users/dreadlocks/project_5/sarah/STAR
+STAR --genomeDir $GENOMEDIR --runThreadN 16 --readFilesIn $SAMPLEPATH/$1 $SAMPLEPATH/$2 --readFilesCommand zcat --outSAMtype BAM SortedByCoordinate \
+--outFilterType BySJout --outFilterMultimapNmax 20 --alignSJoverhangMin 8 --alignSJDBoverhangMin 1 --outFilterMismatchNmax 999 --alignIntronMin 20 \
+--alignIntronMax 1000000 --alignMatesGapMax 1000000 --outFileNamePrefix $SAVEPATH/$3

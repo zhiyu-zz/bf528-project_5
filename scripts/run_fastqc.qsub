@@ -1,0 +1,15 @@
+#!/bin/bash -l
+#$ -P bf528
+#$ -cwd
+#$ -j y
+#$ -pe mpi_16_tasks_per_node 16
+#$ -o run_fastqc.out
+#$ -e run_fastqc.err
+echo "Running job $JOB_ID"
+echo "Started: $(date +%F)"
+echo "Running in directory: $PWD"
+
+module load anaconda3
+conda activate pj5_env
+fastqc -o /projectnb2/bf528/users/dreadlocks/project_5/sarah/fastqc/ /projectnb2/bf528/users/dreadlocks/project_3/curator/sample/*.gz
+echo "Job finished: $(date +%F)"
