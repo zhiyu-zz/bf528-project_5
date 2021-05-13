@@ -1,9 +1,9 @@
 # Project Description
-Concordance of microarray and RNA-Seq differential gene expression is the third group project in BF528. In this individual project, I am taking the Data Curator and Programmer roles which I did not play before in project 3. Analyses are performed on toxogroup 6. 
+Concordance of microarray and RNA-Seq differential gene expression is the third group project in BF528. In this individual project, I am taking the Data Curator and Programmer roles which I did not play before in project 3. Scripts for the Analyst role that I wrote for project 3 are in here as well. Analyses are performed on toxogroup 6. 
 <br/>
 The goal of this project is to reproduce part of the results of the study *A comprehensive study design reveals treatment- and transcript abundance–dependent concordance between RNA-seq and microarray data* conducted by Wang et al, and to learn and practice using modern bioinformatics tools in differential expression analyses. <br/>
 <br/>
-The objective of the original study is to evaluate the similarities and differences between RNA-Seq and microarray platforms in terms of differentially expressed genes (DEGs) identification and the accuracy of predictive models generated from these two platforms. In this project, I performed RNA-Seq read alignment, quality control of raw sequencing data and alignment results, read summarization, and differential expression analysis. <br/>
+The objective of the original study is to evaluate the similarities and differences between RNA-Seq and microarray platforms in terms of differentially expressed genes (DEGs) identification and the accuracy of predictive models generated from these two platforms. In this project, I performed RNA-Seq read alignment, quality control of raw sequencing data and alignment results, read summarization, and differential expression analysis. I performed differential expression analysis on microarray data and calculated cross-platform concordance of DEGs in project 3. <br/>
 <br/>
 
 <br/>
@@ -18,9 +18,11 @@ Miniconda environment for the data curator part of this project.
 Miniconda environment for the data curator part of this project, in human readable format. 
 
 ### scripts
-- `programmer.R` R script for combining count matrices and DE analysis <br/>
+- `programmer.R` R script for combining count matrices and RNA-Seq DE analysis <br/>
+- `run_limma.R` R script for microarray DE analysis <br/>
+- `concordance.ipynb` Jupyter notebook for concordance analysis 
 - `run_fastqc.qsub` qsub script for running FastQC on raw reads <br/>
-- `run_fc.qsub` qsub script for running featureCounts <br/>
+- `run_fc.qsub` qsub script for running Subread featureCounts <br/>
 - `run_multiqc.sh` shell script for running MultiQC. Running this in batch did not work. <br/>
 - `run_star.qsub` qsub script for running STAR aligner <br/>
 
